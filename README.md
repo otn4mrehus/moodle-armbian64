@@ -5,13 +5,13 @@ Moodle on Armbian 64
 mkdir -p ~/docker && cd ~/docker && \
 git clone https://github.com/otnamrehus/moodle-armbian64.git && \
 cd moodle-armbian64 && \
-mkdir -p mariadb_data/ moodledata/ moodle/ && \ 
-chmod -R 775 mariadb_data/ moodledata/ moodle/ 
+mkdir -p mariadb/ moodledata/ moodle/ && \ 
+chmod -R 775 mariadb/ moodledata/ moodle/ 
 ```
 ### Clean Direktori
 ```
-rm -R mariadb_data/ moodle/  moodledata/ && \
-chmod -R 775 mariadb_data/ moodledata/ moodle/
+rm -R mariadb/ moodle/  moodledata/ && \
+chmod -R 775 mariadb/ moodledata/ moodle/
 ```
 ### Run Docker
 ```
