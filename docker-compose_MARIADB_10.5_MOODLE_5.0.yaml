@@ -1,7 +1,7 @@
 version: '2.2'
 services:
   mariadb:
-    image: bitnami/mariadb:10 
+    image: bitnami/mariadb:10.5
     container_name: moodle_mariadb
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
@@ -14,7 +14,7 @@ services:
      #mem_limit: 484m
      #cpus: 1.0
   moodle:
-    image: docker.io/bitnami/moodle:4.0
+    image: docker.io/bitnami/moodle:5.0
     container_name: moodle
     ports:
       - '81:8080' #- '7090:8080'
