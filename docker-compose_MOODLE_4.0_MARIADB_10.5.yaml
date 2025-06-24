@@ -9,10 +9,15 @@ services:
       - MARIADB_DATABASE=bitnami_moodle
       - MARIADB_CHARACTER_SET=utf8mb4
       - MARIADB_COLLATE=utf8mb4_unicode_ci
+      - MARIADB_ROOT_PASSWORD=toor
+      - MARIADB_ROOT_USER=root
+
     volumes:
       - './mariadb:/bitnami/mariadb:rw'
      #mem_limit: 484m
      #cpus: 1.0
+
+     
   moodle:
     image: docker.io/bitnami/moodle:4.0
     container_name: moodle
@@ -33,6 +38,21 @@ services:
       - mariadb
       #mem_limit: 256m
       #cpus: 1.0
+
+      
+  phpmyadmin:
+    image: arm64v8/phpmyadmin
+    container_name: moodle-phpmyadmin
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+      - "82:80"
+    environment:
+      PMA_HOST: mariadb
+    mem_limit: 128m
+    cpus: 1.0
+
 
 volumes:
   mariadb:
