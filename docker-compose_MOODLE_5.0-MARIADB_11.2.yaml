@@ -11,7 +11,7 @@ services:
       - MARIADB_CHARACTER_SET=utf8mb4
       - MARIADB_COLLATE=utf8mb4_unicode_ci
     volumes:
-      - './mariadb_data:/bitnami/mariadb:rw'
+      - './mariadb:/bitnami/mariadb:rw'
   moodle:
     image: docker.io/bitnami/moodle:5.0 #docker.io/bitnami/moodle:4.3
     container_name: moodle
@@ -34,9 +34,10 @@ services:
  #   cpus: 1.0
  
 volumes:
-    mariadb_data:
+  mariadb:
     driver: local
-  moodle_data:
+  moodle:     
     driver: local
-  moodledata_data:
+  moodledata:     
     driver: local
+
