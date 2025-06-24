@@ -1,7 +1,7 @@
 version: '2.2'
 services:
   mariadb:
-    image: bitnami/mariadb:10.5
+    image: bitnami/mariadb:11.0
     container_name: moodle_mariadb
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
